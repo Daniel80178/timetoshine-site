@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TIMETOSHINE — Disciplined Gold Trading. Verified Track Record.</title>
+<meta name="description" content="A research-driven XAUUSD copy-trading strategy. Every entry hand-placed by an experienced team. Every trade publicly verified."/>
+<link rel="icon" type="image/svg+xml" href="TIMETOSHINE_logo.svg"/>
+<link rel="apple-touch-icon" href="TIMETOSHINE_logo.svg"/>
+<style>
+  :root{
+    --bg:#0a0e14;
+    --panel:#11161f;
+    --panel-2:#161c27;
+    --line:#1f2733;
+    --text:#e6edf3;
+    --muted:#8b9bb0;
+    --gold:#d4af37;
+    --gold-soft:#f0b90b;
+    --green:#3fb950;
+    --red:#f85149;
+    --accent:#58a6ff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin:0}
+  p{margin:0}
+
+  /* Top navigation / brand bar */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(12px);
+    background:rgba(10,14,20,0.78);
+    border-bottom:1px solid rgba(255,255,255,0.04);
+  }
+  .nav-inner{
+    max-width:1200px;margin:0 auto;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 24px;
+  }
+  .brand{
+    display:inline-flex;align-items:center;gap:10px;
+    text-decoration:none;color:var(--text);
+    font-weight:800;letter-spacing:0.22em;font-size:15px;
+  }
+  .brand .mark{
+    width:36px;height:36px;
+    display:block;
+    filter:drop-shadow(0 4px 12px rgba(212,175,55,0.25));
+  }
+  .brand .name{
+    background:linear-gradient(90deg,var(--gold) 0%, #f5d36b 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .nav-links{display:flex;align-items:center;gap:18px}
+  .nav-links a{
+    color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;
+    transition:color .15s ease;
+  }
+  .nav-links a:hover{color:var(--text)}
+  .nav-cta{
+    background:rgba(212,175,55,0.12);
+    border:1px solid rgba(212,175,55,0.35);
+    color:var(--gold) !important;
+    padding:7px 14px;border-radius:7px;font-weight:600 !important;
+  }
+  .nav-cta:hover{background:rgba(212,175,55,0.2);color:var(--gold-soft) !important}
+  @media (max-width:560px){
+    .nav-links a:not(.nav-cta){display:none}
+  }
+
+  /* Decorative subtle gold particles in hero */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    min-height:88vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:60px 24px 60px;
+    background:
+      radial-gradient(1200px 600px at 50% -20%, rgba(212,175,55,0.18) 0%, rgba(212,175,55,0) 60%),
+      radial-gradient(900px 600px at 90% 110%, rgba(88,166,255,0.10) 0%, rgba(88,166,255,0) 60%),
+      var(--bg);
+    border-bottom:1px solid var(--line);
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      radial-gradient(rgba(212,175,55,0.06) 1px, transparent 1px);
+    background-size:36px 36px;
+    mask-image:linear-gradient(to bottom,black,transparent);
+    pointer-events:none;
+  }
+  .hero-inner{
+    position:relative;
+    max-width:980px;
+    text-align:center;
+    z-index:1;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:6px 14px;
+    border:1px solid rgba(212,175,55,0.35);
+    border-radius:999px;
+    color:var(--gold);
+    font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;
+    background:rgba(212,175,55,0.06);
+  }
+  .eyebrow .pulse{
+    width:8px;height:8px;border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 0 0 rgba(63,185,80,.7);
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(63,185,80,.6)}
+    70%{box-shadow:0 0 0 10px rgba(63,185,80,0)}
+    100%{box-shadow:0 0 0 0 rgba(63,185,80,0)}
+  }
+  h1.headline{
+    margin:24px 0 18px;
+    font-size:clamp(36px, 5.8vw, 68px);
+  }
+  .headline .accent{
+    background:linear-gradient(90deg,var(--gold) 0%, var(--gold-soft) 50%, var(--gold) 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .subhead{
+    color:var(--muted);
+    font-size:clamp(16px, 1.6vw, 20px);
+    max-width:720px;margin:0 auto 36px;
+  }
+  .cta-row{
+    display:flex;flex-wrap:wrap;gap:14px;justify-content:center;
+  }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:16px 28px;border-radius:10px;
+    font-weight:600;font-size:15px;letter-spacing:0.01em;
+    text-decoration:none;transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+    border:1px solid transparent;cursor:pointer;
+  }
+  .btn-primary{
+    background:linear-gradient(180deg, #e9c252 0%, #c69826 100%);
+    color:#1a1306;
+    box-shadow:0 8px 24px rgba(212,175,55,0.25), inset 0 1px 0 rgba(255,255,255,0.3);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(212,175,55,0.35), inset 0 1px 0 rgba(255,255,255,0.4)}
+  .btn-ghost{
+    background:rgba(255,255,255,0.04);
+    color:var(--text);
+    border:1px solid var(--line);
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,0.08);transform:translateY(-2px)}
+  .trust-row{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:28px;
+    margin-top:48px;color:var(--muted);font-size:13px;letter-spacing:0.04em;
+  }
+  .trust-row strong{color:var(--text)}
+
+  /* Sections */
+  section{padding:88px 24px;border-bottom:1px solid var(--line)}
+  .container{max-width:1100px;margin:0 auto}
+  .section-head{text-align:center;max-width:760px;margin:0 auto 56px}
+  .kicker{
+    color:var(--gold);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;font-weight:700;margin-bottom:14px;
+  }
+  h2{
+    font-size:clamp(28px, 3.4vw, 40px);margin-bottom:14px;
+  }
+  .section-head p{color:var(--muted);font-size:17px}
+
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media (max-width:840px){.grid-3{grid-template-columns:1fr}}
+  .card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:28px 24px;
+    transition:transform .2s ease, border-color .2s ease;
+  }
+  .card:hover{transform:translateY(-4px);border-color:rgba(212,175,55,0.35)}
+  .card .icon{
+    width:44px;height:44px;border-radius:10px;
+    background:linear-gradient(135deg, rgba(212,175,55,0.18), rgba(212,175,55,0.04));
+    border:1px solid rgba(212,175,55,0.25);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold);font-size:22px;margin-bottom:18px;
+  }
+  .card h3{font-size:19px;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:15px}
+
+  /* Pillars (numbered approach) */
+  .pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  @media (max-width:840px){.pillars{grid-template-columns:1fr}}
+  .pillar{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:14px;padding:32px 28px;
+    position:relative;overflow:hidden;
+  }
+  .pillar .num{
+    position:absolute;top:14px;right:18px;
+    font-size:64px;font-weight:800;line-height:1;
+    color:rgba(212,175,55,0.08);font-family:Georgia,serif;
+  }
+  .pillar h3{font-size:21px;margin-bottom:12px}
+  .pillar p{color:var(--muted)}
+
+  /* Track record */
+  .record{
+    background:linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:48px 36px;
+    text-align:center;
+  }
+  .record .verified{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:6px 14px;border-radius:999px;
+    background:rgba(63,185,80,0.12);
+    border:1px solid rgba(63,185,80,0.35);
+    color:var(--green);font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+    margin-bottom:20px;
+  }
+  .record h2{margin-bottom:14px}
+  .record p{color:var(--muted);font-size:16px;max-width:680px;margin:0 auto 28px}
+  .stat-row{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+    max-width:720px;margin:0 auto 32px;
+  }
+  @media (max-width:720px){.stat-row{grid-template-columns:repeat(2,1fr)}}
+  .stat{
+    background:rgba(255,255,255,0.025);
+    border:1px solid var(--line);
+    border-radius:10px;padding:18px 12px;
+  }
+  .stat .value{font-size:24px;font-weight:700;color:var(--gold)}
+  .stat .label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-top:4px}
+
+  /* Why gold */
+  .why{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+  @media (max-width:840px){.why{grid-template-columns:1fr}}
+  .why ul{list-style:none;padding:0;margin:18px 0 0;color:var(--muted)}
+  .why li{
+    padding:10px 0 10px 28px;position:relative;font-size:16px;border-bottom:1px solid rgba(255,255,255,0.04);
+  }
+  .why li:last-child{border-bottom:none}
+  .why li::before{
+    content:"";position:absolute;left:0;top:18px;
+    width:14px;height:8px;border-left:2px solid var(--gold);border-bottom:2px solid var(--gold);
+    transform:rotate(-45deg);
+  }
+  .glow-card{
+    background:radial-gradient(circle at 30% 20%, rgba(212,175,55,0.18), transparent 60%), var(--panel);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:36px;
+    text-align:center;
+  }
+  .glow-card .big{font-size:64px;font-weight:800;color:var(--gold);line-height:1;margin-bottom:10px}
+  .glow-card .small{color:var(--muted);font-size:14px}
+
+  /* Final CTA */
+  .final{
+    text-align:center;
+    background:
+      radial-gradient(800px 400px at 50% 0%, rgba(212,175,55,0.12) 0%, transparent 60%),
+      var(--bg);
+    padding:120px 24px;
+  }
+  .final h2{font-size:clamp(32px, 4.5vw, 52px);margin-bottom:18px}
+  .final p{color:var(--muted);font-size:17px;max-width:600px;margin:0 auto 36px}
+
+  /* Risk disclosure */
+  .risk{
+    background:var(--panel-2);padding:48px 24px;border-top:1px solid var(--line);
+  }
+  .risk-inner{
+    max-width:1100px;margin:0 auto;
+    display:grid;grid-template-columns:1fr 1.6fr;gap:32px;align-items:start;
+  }
+  @media (max-width:840px){.risk-inner{grid-template-columns:1fr}}
+  .risk h3{color:var(--gold);font-size:16px;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:10px}
+  .risk p{color:var(--muted);font-size:13.5px;line-height:1.7}
+
+  /* Footer */
+  footer{
+    padding:30px 24px;text-align:center;color:var(--muted);font-size:13px;
+    border-top:1px solid var(--line);
+  }
+  footer a{color:var(--gold);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+
+  /* Reveal-on-scroll */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+
+  /* === LIVE PERFORMANCE SECTION === */
+  .perf{
+    background:linear-gradient(180deg, var(--panel-2) 0%, var(--bg) 100%);
+    padding:96px 24px;
+    border-bottom:1px solid var(--line);
+  }
+  .perf-head{text-align:center;max-width:760px;margin:0 auto 56px}
+  .live-dot{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:6px 14px;border-radius:999px;
+    background:rgba(63,185,80,0.10);border:1px solid rgba(63,185,80,0.4);
+    color:var(--green);font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;
+    margin-bottom:18px;
+  }
+  .live-dot .ring{
+    width:8px;height:8px;border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 0 0 rgba(63,185,80,.7);
+    animation:pulse 2s infinite;
+  }
+  .perf-hero{
+    max-width:980px;margin:0 auto;
+    background:
+      radial-gradient(700px 300px at 50% -10%, rgba(212,175,55,0.16), transparent 60%),
+      linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
+    border:1px solid rgba(212,175,55,0.25);
+    border-radius:22px;
+    padding:54px 36px 40px;
+    text-align:center;
+    box-shadow:0 24px 80px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
+  }
+  .perf-hero .since{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:0.18em;margin-bottom:10px}
+  .perf-hero .big-number{
+    font-size:clamp(72px, 12vw, 132px);
+    font-weight:900;line-height:1;letter-spacing:-0.04em;
+    background:linear-gradient(180deg, var(--gold) 0%, #b88828 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    display:inline-block;margin:8px 0 6px;
+    text-shadow:0 8px 32px rgba(212,175,55,0.2);
+  }
+  .perf-hero .label-row{color:var(--muted);font-size:15px;margin-top:8px}
+  .perf-hero .label-row .sep{color:rgba(255,255,255,0.15);margin:0 10px}
+  .perf-hero .label-row strong{color:var(--text)}
+
+  .stat-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+    max-width:980px;margin:32px auto 0;
+  }
+  @media (max-width:840px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
+  .stat-card{
+    background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:24px 18px;text-align:center;
+    transition:transform .2s ease, border-color .2s ease;
+  }
+  .stat-card:hover{transform:translateY(-3px);border-color:rgba(212,175,55,0.4)}
+  .stat-card .stat-label{
+    color:var(--muted);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;margin-bottom:10px;
+  }
+  .stat-card .stat-value{
+    font-size:30px;font-weight:800;color:var(--text);letter-spacing:-0.02em;
+  }
+  .stat-card .stat-value.positive{color:var(--green)}
+  .stat-card .stat-value.gold{color:var(--gold)}
+  .stat-card .stat-sub{font-size:12px;color:var(--muted);margin-top:6px}
+
+  .perf-updated{
+    text-align:center;margin-top:28px;font-size:12px;color:var(--muted);letter-spacing:0.05em;
+  }
+  .perf-updated .dot{color:var(--green);font-weight:900}
+</style>
+</head>
+<body>
+
+<!-- TOP NAV / BRAND -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <img class="mark" src="TIMETOSHINE_logo.svg" alt="TIMETOSHINE"/>
+      <span class="name">TIMETOSHINE</span>
+    </a>
+    <div class="nav-links">
+      <a href="https://www.myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554" target="_blank" rel="noopener">Track Record</a>
+      <a class="nav-cta" href="https://ct.spotware.com/copy/strategy/117861" target="_blank" rel="noopener">Copy on cTrader</a>
+    </div>
+  </div>
+</nav>
+
+<a id="top"></a>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow"><span class="pulse"></span>Live · XAUUSD Strategy</span>
+    <h1 class="headline">Disciplined gold trading.<br/><span class="accent">Verified, in public.</span></h1>
+    <p class="subhead">
+      Every entry is placed by hand by an experienced team — never by an algorithm acting on its own.
+      Every trade is published live to MyFXBook and cTrader Copy. Nothing is hidden.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://ct.spotware.com/copy/strategy/117861" target="_blank" rel="noopener">
+        Start copying on cTrader →
+      </a>
+      <a class="btn btn-ghost" href="https://www.myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554" target="_blank" rel="noopener">
+        Inspect the live track record
+      </a>
+    </div>
+    <div class="trust-row">
+      <span><strong>Broker:</strong> Pepperstone (cTrader)</span>
+      <span><strong>Instrument:</strong> XAUUSD</span>
+      <span><strong>Verification:</strong> MyFXBook (public)</span>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE PERFORMANCE (auto-updated daily) -->
+<section class="perf">
+  <div class="perf-head reveal">
+    <span class="live-dot"><span class="ring"></span>Live · Auto-updated daily</span>
+    <h2 style="font-size:clamp(28px,3.4vw,40px);margin-bottom:14px">The numbers speak for themselves.</h2>
+    <p style="color:var(--muted);font-size:17px">Every figure below is calculated from the live trading account, refreshed automatically.</p>
+  </div>
+
+  <div class="perf-hero reveal">
+    <div class="since" data-stat="since-label">Since launch · Jun 1, 2026</div>
+    <div class="big-number" data-stat="total-return">+44.2%</div>
+    <div class="label-row">
+      <strong>Total Return</strong>
+      <span class="sep">·</span>
+      <span data-stat="trade-count">53</span> trades closed
+      <span class="sep">·</span>
+      <span data-stat="days-live">11</span> days live
+    </div>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card reveal">
+      <div class="stat-label">Win Rate</div>
+      <div class="stat-value positive" data-stat="win-rate">79.2%</div>
+      <div class="stat-sub"><span data-stat="wins">42</span>W · <span data-stat="losses">11</span>L</div>
+    </div>
+    <div class="stat-card reveal">
+      <div class="stat-label">Profit Factor</div>
+      <div class="stat-value gold" data-stat="profit-factor">5.19</div>
+      <div class="stat-sub">avg win ÷ avg loss</div>
+    </div>
+    <div class="stat-card reveal">
+      <div class="stat-label">This Week</div>
+      <div class="stat-value positive" data-stat="this-week">+12.3%</div>
+      <div class="stat-sub">Jun 8 → today</div>
+    </div>
+    <div class="stat-card reveal">
+      <div class="stat-label">Last Week</div>
+      <div class="stat-value positive" data-stat="last-week">+28.4%</div>
+      <div class="stat-sub">Jun 1 → Jun 7</div>
+    </div>
+  </div>
+
+  <div class="perf-updated">
+    <span class="dot">●</span> Last updated: <span data-stat="last-updated">Jun 11, 2026 · 22:54 UTC</span>
+  </div>
+</section>
+
+<!-- WHAT MAKES IT DIFFERENT -->
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Built Differently</div>
+      <h2>A trader's strategy. Executed with the precision of software.</h2>
+      <p>Most copy-trading strategies are pure black-box algorithms making decisions you can't see. TIMETOSHINE flips that: humans decide, software executes.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal">
+        <div class="icon">✦</div>
+        <h3>Hand-placed entries</h3>
+        <p>Every position originates from a human decision. The bot never opens a trade on its own — it only manages, grids, and closes what the team places. No surprise overnight trades.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">◇</div>
+        <h3>Daily research-driven</h3>
+        <p>Entries are based on continuous research: macro context, gold structure, news calendar, and cross-asset signals from DXY, US10Y yields, and major USD pairs.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">⬢</div>
+        <h3>Risk-controlled execution</h3>
+        <p>Structured grid management, anchor take-profits, news-event blackout windows, and balance-proportional position sizing. Drawdown is expected and engineered for.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE APPROACH -->
+<section style="background:var(--panel-2)">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">The Approach</div>
+      <h2>Why this isn't another auto-bot</h2>
+      <p>The difference between a strategy and a script is judgment. Here's how that judgment is applied to every trade.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="num">01</div>
+        <h3>Decisions before code</h3>
+        <p>The team reads the market every day. Macro context, daily structure, expected news. Only when conditions match the strategy's edge is an entry placed. Patience is a feature, not a bug.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="num">02</div>
+        <h3>Software for what software does best</h3>
+        <p>Position management, grid placement, anchor TP math, news-blackout enforcement — all handled by the bot, in real time, without emotion. Humans set direction; software handles precision.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="num">03</div>
+        <h3>Transparency by default</h3>
+        <p>The live MyFXBook track record is public. The cTrader Copy stats are public. Followers see exactly what's happening, when it's happening — including the losing trades.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="num">04</div>
+        <h3>Profit discipline</h3>
+        <p>Profits are withdrawn at meaningful milestones rather than left to compound indefinitely. This caps the absolute risk on the table at any point in time — and protects the people copying.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACK RECORD -->
+<section>
+  <div class="container">
+    <div class="record reveal">
+      <span class="verified">● Independently verified</span>
+      <h2>The full track record is public.</h2>
+      <p>You don't have to take our word for it. The MyFXBook profile updates live with every closed trade. Drawdowns, win rate, profit factor — all on the page, all the time.</p>
+      <div class="stat-row">
+        <div class="stat"><div class="value">XAUUSD</div><div class="label">Instrument</div></div>
+        <div class="stat"><div class="value">Live</div><div class="label">Status</div></div>
+        <div class="stat"><div class="value">Public</div><div class="label">Verification</div></div>
+        <div class="stat"><div class="value">cTrader</div><div class="label">Platform</div></div>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://www.myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554" target="_blank" rel="noopener">
+          See the live numbers →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY GOLD -->
+<section style="background:var(--panel-2)">
+  <div class="container">
+    <div class="why">
+      <div class="reveal">
+        <div class="kicker">Why XAUUSD</div>
+        <h2>Gold is where serious traders live.</h2>
+        <p style="color:var(--muted);margin-top:14px">It moves on macro forces, not headlines from a single company. It's deep, liquid, and trades around the clock. Volatility that pays attention, not noise that doesn't.</p>
+        <ul>
+          <li>Macro-driven — responds to real-rate, USD, and risk-sentiment regimes</li>
+          <li>Deep liquidity, tight spreads with serious brokers</li>
+          <li>24/5 sessions: London → New York → Tokyo coverage</li>
+          <li>Decades of structure to lean on — not a "this-year" asset</li>
+        </ul>
+      </div>
+      <div class="glow-card reveal">
+        <div class="big">XAU</div>
+        <div class="small">One instrument. Fully understood. No style drift.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="container reveal">
+    <h2>Two clicks to start copying.</h2>
+    <p>Open a Pepperstone cTrader account, connect via cTrader Copy, allocate what you're comfortable losing. That's it.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://ct.spotware.com/copy/strategy/117861" target="_blank" rel="noopener">
+        Copy this strategy →
+      </a>
+      <a class="btn btn-ghost" href="https://www.myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554" target="_blank" rel="noopener">
+        Verify first
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- RISK DISCLOSURE (required) -->
+<aside class="risk">
+  <div class="risk-inner">
+    <div>
+      <h3>Risk Disclosure</h3>
+    </div>
+    <div>
+      <p>
+        Trading leveraged derivatives such as CFDs on gold (XAUUSD) carries a high level of risk and may not be suitable for all investors.
+        You may lose some or all of your invested capital. Copy trading does not eliminate this risk — it transfers execution, not outcome.
+        Past performance shown on MyFXBook and cTrader Copy is not a reliable indicator of future results. This page is informational only and does
+        not constitute personal financial advice. Only allocate capital you can afford to lose. Consider your financial situation and seek
+        independent advice if you are uncertain.
+      </p>
+    </div>
+  </div>
+</aside>
+
+<footer>
+  TIMETOSHINE · <a href="https://ct.spotware.com/copy/strategy/117861" target="_blank" rel="noopener">cTrader Copy</a> · <a href="https://www.myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554" target="_blank" rel="noopener">MyFXBook</a>
+</footer>
+
+<script>
+  // Reveal-on-scroll
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    }
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
