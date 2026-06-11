@@ -31,7 +31,7 @@ XLSX_DIR      = Path(r"C:\TradingBots\TIMETOSHINE_DEPLOY\myfxbook")
 
 LAUNCH_DATE   = date(2026, 6, 1)
 
-GIT_AUTO_PUSH = False  # flip to True once the GitHub repo is set up
+GIT_AUTO_PUSH = True   # GitHub repo wired up + Netlify auto-deploys on push
 
 
 # ----------------------------------------------------------------------
