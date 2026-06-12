@@ -1,0 +1,26 @@
+📊 TIMETOSHINE — Daily Recap (Jun 12)
+
+🕯️ Today's session
+• 0 trades closed
+• Day: 0.00%
+
+No closures today — patience over forcing. Sometimes the best trade is no trade. The strategy waits for setups that meet its criteria and skips the rest.
+
+📅 Zoom out:
+• Week so far: +12.3%
+• Last week: +28.4%
+• Since launch (Jun 1): +44.2%
+• Overall win rate: 79.2%
+• Profit factor: 5.19
+
+💬 "It was never my thinking that made the big money for me. It always was my sitting."
+   — Jesse Livermore
+
+🔍 Verify everything live:
+myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554
+
+🌐 Full strategy & live stats:
+timetoshine8.netlify.app
+
+📈 Copy on cTrader (free, 2 clicks):
+ct.spotware.com/copy/strategy/117861
