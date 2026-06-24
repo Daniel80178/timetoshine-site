@@ -1,22 +1,22 @@
-📊 TIMETOSHINE — Daily Recap (Jun 23)
+📊 TIMETOSHINE — Daily Recap (Jun 24)
 
 🕯️ Today's session
-• 10 trades closed
-• 8 wins · 2 losses
-• Win rate: 80%
-• Day: +5.93%
+• 4 trades closed
+• 4 wins · 0 losses
+• Win rate: 100%
+• Day: +2.56%
 
-A balanced session — wins and losses both reported. The strategy is built for this rhythm: not every trade wins, but the math works out when you stay disciplined.
+A clean session. Every entry hit profit. Selectivity over volume — quality over quantity. Exactly the rhythm the strategy is built for.
 
 📅 Zoom out:
-• Week so far: +7.2%
+• Week so far: +9.9%
 • Last week: +15.8%
-• Since launch (Jun 1): +84.6%
-• Overall win rate: 80.2%
-• Profit factor: 4.38
+• Since launch (Jun 1): +89.2%
+• Overall win rate: 79.6%
+• Profit factor: 3.60
 
-💬 "In trading, it's not about how often you're right — it's about how much you make when you are."
-   — George Soros
+💬 "Wealth is what you don't see."
+   — Morgan Housel
 
 🔍 Verify everything live:
 myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554
