@@ -5,8 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>TIMETOSHINE — Disciplined Gold Trading. Verified Track Record.</title>
 <meta name="description" content="A research-driven XAUUSD copy-trading strategy. Every entry hand-placed by an experienced team. Every trade publicly verified."/>
+<link rel="canonical" href="https://timetoshineofficial.com/"/>
 <link rel="icon" type="image/svg+xml" href="TIMETOSHINE_logo.svg"/>
 <link rel="apple-touch-icon" href="TIMETOSHINE_logo.svg"/>
+
+<!-- Open Graph (Facebook, LinkedIn, Telegram, WhatsApp link previews) -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://timetoshineofficial.com/"/>
+<meta property="og:title" content="TIMETOSHINE — Disciplined Gold Trading. Verified Track Record."/>
+<meta property="og:description" content="Research-driven XAUUSD copy-trading. Every entry hand-placed. Every trade publicly verified on MyFXBook."/>
+<meta property="og:image" content="https://timetoshineofficial.com/TIMETOSHINE_logo.svg"/>
+<meta property="og:site_name" content="TIMETOSHINE"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="TIMETOSHINE — Disciplined Gold Trading"/>
+<meta name="twitter:description" content="Research-driven XAUUSD copy-trading. Verified on MyFXBook."/>
+<meta name="twitter:image" content="https://timetoshineofficial.com/TIMETOSHINE_logo.svg"/>
+
+<!-- Cloudflare Web Analytics — sign up free at dash.cloudflare.com -> Analytics & Logs -> Web Analytics
+     and paste the provided <script defer src=... data-cf-beacon=...></script> below this line. -->
+
 <style>
   :root{
     --bg:#0a0e14;
@@ -325,6 +344,110 @@
   .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease, transform .7s ease}
   .reveal.visible{opacity:1;transform:translateY(0)}
 
+  /* ===== LOADING SPLASH (TIMETOSHINE logo, ~600ms total) ===== */
+  .splash{
+    position:fixed;inset:0;z-index:9999;
+    background:var(--bg);
+    display:flex;align-items:center;justify-content:center;
+    transition:opacity .35s ease-out, visibility .35s;
+  }
+  .splash img{width:96px;height:96px;animation:splash-pop .45s cubic-bezier(.2,.7,.3,1.2) both}
+  .splash.fade-out{opacity:0;visibility:hidden;pointer-events:none}
+  @keyframes splash-pop{
+    0%{transform:scale(.6);opacity:0;filter:drop-shadow(0 0 0 rgba(212,175,55,0))}
+    60%{transform:scale(1.05);opacity:1}
+    100%{transform:scale(1);opacity:1;filter:drop-shadow(0 8px 32px rgba(212,175,55,.35))}
+  }
+
+  /* ===== HAMBURGER (mobile menu) ===== */
+  .hamburger{
+    display:none;
+    background:none;border:1px solid var(--line);border-radius:8px;
+    padding:8px 10px;cursor:pointer;
+    flex-direction:column;gap:4px;align-items:center;justify-content:center;
+  }
+  .hamburger span{
+    display:block;width:20px;height:2px;background:var(--text);border-radius:2px;
+    transition:transform .25s, opacity .25s;
+  }
+  .hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  .hamburger.open span:nth-child(2){opacity:0}
+  .hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+  @media (max-width:700px){
+    .hamburger{display:flex}
+    .nav-links{
+      display:none;
+      position:absolute;top:100%;right:24px;left:24px;
+      flex-direction:column;align-items:stretch;gap:6px;
+      background:var(--panel);border:1px solid var(--line);
+      border-radius:12px;padding:14px;
+      box-shadow:0 20px 50px rgba(0,0,0,.5);
+    }
+    .nav-links.open{display:flex}
+    .nav-links a{padding:10px 12px;border-radius:8px;font-size:14px}
+    .nav-links a:hover{background:rgba(255,255,255,.03)}
+    .nav-telegram span{display:inline !important}
+    .nav-links a:not(.nav-cta):not(.nav-telegram){display:block !important}
+  }
+
+  /* ===== EQUITY CURVE CHART ===== */
+  .equity-wrap{
+    max-width:980px;margin:48px auto 0;
+    background:linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:24px 16px 8px;
+    overflow:hidden;
+  }
+  .equity-wrap svg{width:100%;height:auto;display:block}
+  .equity-caption{
+    text-align:center;color:var(--muted);font-size:12px;
+    padding:8px 16px 16px;
+    letter-spacing:.05em;
+  }
+
+  /* ===== HOW TO COPY (4 numbered cards) ===== */
+  .how-section{background:linear-gradient(180deg, var(--bg) 0%, var(--panel-2) 100%);padding:96px 24px}
+  .how-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+    max-width:1180px;margin:0 auto;
+  }
+  @media (max-width:980px){.how-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.how-grid{grid-template-columns:1fr}}
+  .how-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:28px 22px;
+    position:relative;
+    transition:transform .2s ease, border-color .2s ease;
+  }
+  .how-card:hover{transform:translateY(-4px);border-color:rgba(212,175,55,.4)}
+  .how-card .step{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:42px;height:42px;border-radius:50%;
+    background:linear-gradient(135deg, var(--gold) 0%, #8a6d1c 100%);
+    color:#1a1306;font-weight:900;font-size:18px;
+    margin-bottom:16px;
+    box-shadow:0 6px 18px rgba(212,175,55,.25);
+  }
+  .how-card h3{font-size:17px;margin-bottom:10px;color:var(--text)}
+  .how-card p{color:var(--muted);font-size:14px;margin-bottom:12px;line-height:1.55}
+  .how-card ul{margin:8px 0 14px;padding:0;list-style:none;color:var(--muted);font-size:13px}
+  .how-card li{padding:4px 0 4px 16px;position:relative}
+  .how-card li::before{content:"▸";position:absolute;left:0;color:var(--gold);font-size:11px;top:5px}
+  .how-card .step-link{
+    display:inline-flex;align-items:center;gap:6px;
+    color:var(--gold);text-decoration:none;font-size:13px;font-weight:600;
+    border-bottom:1px dashed rgba(212,175,55,.4);padding-bottom:1px;
+  }
+  .how-card .step-link:hover{color:var(--gold-soft);border-bottom-style:solid}
+  .how-questions{
+    text-align:center;color:var(--muted);font-size:14px;margin-top:36px;
+  }
+  .how-questions a{color:var(--gold);text-decoration:none}
+  .how-questions a:hover{text-decoration:underline}
+
   /* === LIVE PERFORMANCE SECTION === */
   .perf{
     background:linear-gradient(180deg, var(--panel-2) 0%, var(--bg) 100%);
@@ -398,6 +521,9 @@
 </head>
 <body>
 
+<!-- LOADING SPLASH -->
+<div class="splash" id="splash"><img src="TIMETOSHINE_logo.svg" alt=""/></div>
+
 <!-- TOP NAV / BRAND -->
 <nav class="nav">
   <div class="nav-inner">
@@ -405,7 +531,11 @@
       <img class="mark" src="TIMETOSHINE_logo.svg" alt="TIMETOSHINE"/>
       <span class="name">TIMETOSHINE</span>
     </a>
-    <div class="nav-links">
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#how-to-copy">How to Copy</a>
       <a href="https://www.myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554" target="_blank" rel="noopener">Track Record</a>
       <a class="nav-telegram" href="https://t.me/TIMETOSHINE08" target="_blank" rel="noopener" aria-label="Telegram">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.04 15.47l-.36 4.99c.52 0 .74-.22 1-.48l2.4-2.27 4.98 3.6c.91.5 1.56.24 1.78-.84l3.23-15.05c.28-1.3-.47-1.81-1.36-1.48L1.5 9.97c-1.27.5-1.26 1.22-.22 1.54l4.94 1.54L17.7 6.18c.54-.34 1.04-.15.63.2L9.04 15.47z"/></svg>
@@ -487,7 +617,13 @@
   </div>
 
   <div class="perf-updated">
-    <span class="dot">●</span> Last updated: <span data-stat="last-updated">Jun 24, 2026 · 18:00 UTC</span>
+    <span class="dot">●</span> Last updated: <span data-stat="last-updated">Jun 24, 2026 · 21:03 UTC</span>
+  </div>
+
+  <!-- Equity curve (cumulative % growth — refreshed by update_stats.py daily) -->
+  <div class="equity-wrap reveal">
+    <!--EQUITY_SVG_START--><svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="eqFill" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#d4af37" stop-opacity="0.35"/><stop offset="100%" stop-color="#d4af37" stop-opacity="0"/></linearGradient></defs><line x1="70" y1="270.0" x2="770" y2="270.0" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,3"/><line x1="70" y1="227.2" x2="770" y2="227.2" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,3"/><line x1="70" y1="184.4" x2="770" y2="184.4" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,3"/><line x1="70" y1="141.5" x2="770" y2="141.5" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,3"/><line x1="70" y1="98.7" x2="770" y2="98.7" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,3"/><line x1="70" y1="55.9" x2="770" y2="55.9" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,3"/><text x="62" y="274.0" fill="#8b9bb0" font-size="11" text-anchor="end">+0%</text><text x="62" y="231.2" fill="#8b9bb0" font-size="11" text-anchor="end">+20%</text><text x="62" y="188.4" fill="#8b9bb0" font-size="11" text-anchor="end">+40%</text><text x="62" y="145.5" fill="#8b9bb0" font-size="11" text-anchor="end">+60%</text><text x="62" y="102.7" fill="#8b9bb0" font-size="11" text-anchor="end">+80%</text><text x="62" y="59.9" fill="#8b9bb0" font-size="11" text-anchor="end">+100%</text><path d="M 70.0,267.3 L 74.4,264.5 L 75.9,261.6 L 77.8,258.5 L 78.8,261.9 L 78.8,259.8 L 87.7,257.0 L 89.0,255.4 L 89.0,251.9 L 98.8,248.7 L 102.9,245.4 L 104.2,242.5 L 107.6,245.6 L 107.6,247.5 L 107.6,248.0 L 107.6,248.0 L 107.6,246.6 L 107.6,244.5 L 107.6,241.9 L 115.9,238.7 L 133.6,237.2 L 133.6,237.7 L 144.8,236.6 L 155.9,233.6 L 165.0,230.4 L 165.6,227.1 L 177.5,223.7 L 177.6,229.3 L 177.6,229.9 L 177.6,228.2 L 177.6,225.4 L 192.9,222.1 L 193.1,221.1 L 193.1,218.7 L 193.1,214.6 L 267.7,209.2 L 280.0,205.3 L 280.0,208.8 L 280.0,207.8 L 281.5,205.7 L 299.8,204.2 L 299.8,200.7 L 299.8,196.2 L 327.0,195.2 L 327.0,197.5 L 327.3,194.9 L 333.8,192.7 L 337.3,188.8 L 347.5,185.1 L 356.6,181.4 L 356.6,182.6 L 359.0,180.7 L 361.5,175.4 L 479.5,161.5 L 480.9,153.7 L 480.9,153.7 L 480.9,153.7 L 480.9,153.7 L 494.6,149.1 L 499.7,146.4 L 499.7,145.2 L 499.7,144.5 L 499.7,144.1 L 499.7,144.0 L 499.7,147.6 L 499.7,152.4 L 499.7,159.9 L 519.3,155.7 L 519.8,151.7 L 519.8,149.7 L 540.7,148.3 L 546.7,145.3 L 546.7,143.6 L 546.7,143.8 L 585.5,129.0 L 589.3,123.9 L 604.8,117.5 L 610.5,112.4 L 611.8,109.9 L 611.8,115.6 L 698.1,111.1 L 724.1,107.8 L 724.8,106.0 L 731.2,107.4 L 731.6,109.3 L 732.5,107.8 L 734.3,102.3 L 734.6,101.4 L 735.4,99.0 L 738.8,94.0 L 742.6,89.0 L 743.5,84.1 L 744.1,89.1 L 744.1,89.1 L 744.1,89.1 L 744.1,89.2 L 744.1,89.2 L 744.1,89.2 L 744.1,89.2 L 758.6,86.1 L 764.8,83.4 L 769.5,82.1 L 770.0,79.1 L 770.0,270.0 L 70.0,270.0 Z" fill="url(#eqFill)"/><path d="M 70.0,267.3 L 74.4,264.5 L 75.9,261.6 L 77.8,258.5 L 78.8,261.9 L 78.8,259.8 L 87.7,257.0 L 89.0,255.4 L 89.0,251.9 L 98.8,248.7 L 102.9,245.4 L 104.2,242.5 L 107.6,245.6 L 107.6,247.5 L 107.6,248.0 L 107.6,248.0 L 107.6,246.6 L 107.6,244.5 L 107.6,241.9 L 115.9,238.7 L 133.6,237.2 L 133.6,237.7 L 144.8,236.6 L 155.9,233.6 L 165.0,230.4 L 165.6,227.1 L 177.5,223.7 L 177.6,229.3 L 177.6,229.9 L 177.6,228.2 L 177.6,225.4 L 192.9,222.1 L 193.1,221.1 L 193.1,218.7 L 193.1,214.6 L 267.7,209.2 L 280.0,205.3 L 280.0,208.8 L 280.0,207.8 L 281.5,205.7 L 299.8,204.2 L 299.8,200.7 L 299.8,196.2 L 327.0,195.2 L 327.0,197.5 L 327.3,194.9 L 333.8,192.7 L 337.3,188.8 L 347.5,185.1 L 356.6,181.4 L 356.6,182.6 L 359.0,180.7 L 361.5,175.4 L 479.5,161.5 L 480.9,153.7 L 480.9,153.7 L 480.9,153.7 L 480.9,153.7 L 494.6,149.1 L 499.7,146.4 L 499.7,145.2 L 499.7,144.5 L 499.7,144.1 L 499.7,144.0 L 499.7,147.6 L 499.7,152.4 L 499.7,159.9 L 519.3,155.7 L 519.8,151.7 L 519.8,149.7 L 540.7,148.3 L 546.7,145.3 L 546.7,143.6 L 546.7,143.8 L 585.5,129.0 L 589.3,123.9 L 604.8,117.5 L 610.5,112.4 L 611.8,109.9 L 611.8,115.6 L 698.1,111.1 L 724.1,107.8 L 724.8,106.0 L 731.2,107.4 L 731.6,109.3 L 732.5,107.8 L 734.3,102.3 L 734.6,101.4 L 735.4,99.0 L 738.8,94.0 L 742.6,89.0 L 743.5,84.1 L 744.1,89.1 L 744.1,89.1 L 744.1,89.1 L 744.1,89.2 L 744.1,89.2 L 744.1,89.2 L 744.1,89.2 L 758.6,86.1 L 764.8,83.4 L 769.5,82.1 L 770.0,79.1" stroke="#d4af37" stroke-width="2.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/><circle cx="280.0" cy="205.3" r="3" fill="#0a0e14" stroke="#d4af37" stroke-width="2"/><circle cx="479.5" cy="161.5" r="3" fill="#0a0e14" stroke="#d4af37" stroke-width="2"/><circle cx="770.0" cy="79.1" r="14" fill="#d4af37" fill-opacity="0.18"/><circle cx="770.0" cy="79.1" r="6" fill="#d4af37"/><text x="82" y="58" fill="#8b9bb0" font-size="11" font-weight="700" letter-spacing="2.5">TOTAL GROWTH</text><text x="82" y="102" fill="#d4af37" font-size="42" font-weight="900" letter-spacing="-1">+89.17%</text><text x="82" y="120" fill="#8b9bb0" font-size="11">since Jun 1, 2026</text><text x="70" y="302" fill="#8b9bb0" font-size="10">Jun 1</text><text x="770" y="302" fill="#8b9bb0" font-size="10" text-anchor="end">Jun 24</text></svg><!--EQUITY_SVG_END-->
+    <div class="equity-caption">% growth from starting capital · refreshed daily at 20:00 SAST</div>
   </div>
 </section>
 
@@ -597,6 +733,74 @@
   </div>
 </section>
 
+<!-- HOW TO COPY (4-step playbook) -->
+<section class="how-section" id="how-to-copy">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Get Started</div>
+      <h2>How to copy this strategy in 4 steps</h2>
+      <p style="color:var(--muted);font-size:17px">A clean walkthrough — open account, link funds, start copying. About 15 minutes from sign-up to first auto-replicated trade.</p>
+    </div>
+    <div class="how-grid">
+
+      <div class="how-card reveal">
+        <div class="step">1</div>
+        <h3>Open a Pepperstone account</h3>
+        <p>Sign up with Pepperstone — our regulated broker. Identity verification is standard. Choose <strong>cTrader</strong> as your platform.</p>
+        <ul>
+          <li>Use the link below for the right setup</li>
+          <li>Verify your ID (driver's licence or passport)</li>
+          <li>Select cTrader when asked</li>
+        </ul>
+        <a class="step-link" href="https://pepperstone.com/en/go/refer-a-friend/?locale=en&promo_type=RAF&utm_source=3098839" target="_blank" rel="noopener">Open Pepperstone →</a>
+      </div>
+
+      <div class="how-card reveal">
+        <div class="step">2</div>
+        <h3>Create a cTrader USD sub-account</h3>
+        <p>Inside Pepperstone Client Area, create a trading sub-account with the exact settings that match the strategy.</p>
+        <ul>
+          <li>Platform: <strong>cTrader</strong></li>
+          <li>Base currency: <strong>USD</strong></li>
+          <li>Leverage: <strong>1:500</strong></li>
+          <li>Minimum deposit: <strong>$750 USD</strong></li>
+        </ul>
+        <a class="step-link" href="https://secure.pepperstone.com/en/login" target="_blank" rel="noopener">Pepperstone Client Area →</a>
+      </div>
+
+      <div class="how-card reveal">
+        <div class="step">3</div>
+        <h3>Log in to cTrader Copy</h3>
+        <p>Open the cTrader Copy social terminal where the strategy is hosted. Sign in with the cTID and password sent to your email when the sub-account was created.</p>
+        <ul>
+          <li>Open the TIMETOSHINE strategy</li>
+          <li>Log in with your cTID</li>
+          <li>Click the Copy icon in the left menu</li>
+        </ul>
+        <a class="step-link" href="https://ct.spotware.com/copy/strategy/117861" target="_blank" rel="noopener">Open TIMETOSHINE →</a>
+      </div>
+
+      <div class="how-card reveal">
+        <div class="step">4</div>
+        <h3>Link your funds and start copying</h3>
+        <p>Hit the green <strong>Start Copying</strong> button on the strategy page. Pick your funded USD account, allocate your $750+, review the fee structure, confirm.</p>
+        <ul>
+          <li>Click Start Copying (top right)</li>
+          <li>Select your USD Pepperstone account</li>
+          <li>Allocate $750+ USD</li>
+          <li>Confirm — trades start replicating instantly</li>
+        </ul>
+        <a class="step-link" href="https://ct.spotware.com/copy/strategy/117861" target="_blank" rel="noopener">Start Copying →</a>
+      </div>
+
+    </div>
+    <p class="how-questions reveal">
+      Stuck on a step? Email <a href="mailto:hello@timetoshineofficial.com">hello@timetoshineofficial.com</a> — we read every one.
+      <br/>Or join our Telegram <a href="https://t.me/TIMETOSHINE08" target="_blank" rel="noopener">@TIMETOSHINE08</a> for daily updates.
+    </p>
+  </div>
+</section>
+
 <!-- FINAL CTA -->
 <section class="final">
   <div class="container reveal">
@@ -639,7 +843,10 @@
 </aside>
 
 <footer>
-  TIMETOSHINE · <a href="https://ct.spotware.com/copy/strategy/117861" target="_blank" rel="noopener">cTrader Copy</a> · <a href="https://www.myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554" target="_blank" rel="noopener">MyFXBook</a> · <a href="https://t.me/TIMETOSHINE08" target="_blank" rel="noopener">Telegram</a>
+  TIMETOSHINE · <a href="https://ct.spotware.com/copy/strategy/117861" target="_blank" rel="noopener">cTrader Copy</a> · <a href="https://www.myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554" target="_blank" rel="noopener">MyFXBook</a> · <a href="https://t.me/TIMETOSHINE08" target="_blank" rel="noopener">Telegram</a> · <a href="mailto:hello@timetoshineofficial.com">Contact</a>
+  <div style="margin-top:10px;font-size:11px;color:var(--muted);opacity:.6">
+    © 2026 TIMETOSHINE · <a href="mailto:hello@timetoshineofficial.com" style="color:inherit">hello@timetoshineofficial.com</a>
+  </div>
 </footer>
 
 <script>
@@ -650,6 +857,31 @@
     }
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Loading splash — fade out shortly after the page is interactive
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const s = document.getElementById('splash');
+      if (s) s.classList.add('fade-out');
+    }, 300);
+  });
+
+  // Mobile hamburger toggle
+  const hb = document.getElementById('hamburger');
+  const nav = document.getElementById('navLinks');
+  if (hb && nav) {
+    hb.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      hb.classList.toggle('open', open);
+      hb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Close menu when a link is tapped (mobile UX)
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      hb.classList.remove('open');
+      hb.setAttribute('aria-expanded', 'false');
+    }));
+  }
 </script>
 </body>
 </html>

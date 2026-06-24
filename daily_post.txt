@@ -15,14 +15,14 @@ A clean session. Every entry hit profit. Selectivity over volume — quality ove
 • Overall win rate: 79.6%
 • Profit factor: 3.60
 
-💬 "Wealth is what you don't see."
+💬 "The hardest financial skill is getting the goalpost to stop moving."
    — Morgan Housel
 
 🔍 Verify everything live:
 myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554
 
 🌐 Full strategy & live stats:
-timetoshine8.netlify.app
+timetoshineofficial.com
 
 📈 Copy on cTrader (free, 2 clicks):
 ct.spotware.com/copy/strategy/117861
