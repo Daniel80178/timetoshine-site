@@ -7,21 +7,25 @@
 <meta name="description" content="A research-driven XAUUSD copy-trading strategy. Every entry hand-placed by an experienced team. Every trade publicly verified."/>
 <link rel="canonical" href="https://timetoshineofficial.com/"/>
 <link rel="icon" type="image/svg+xml" href="TIMETOSHINE_logo.svg"/>
-<link rel="apple-touch-icon" href="TIMETOSHINE_logo.svg"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="manifest" href="/manifest.json"/>
+<meta name="theme-color" content="#0a0e14"/>
 
 <!-- Open Graph (Facebook, LinkedIn, Telegram, WhatsApp link previews) -->
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://timetoshineofficial.com/"/>
 <meta property="og:title" content="TIMETOSHINE — Disciplined Gold Trading. Verified Track Record."/>
 <meta property="og:description" content="Research-driven XAUUSD copy-trading. Every entry hand-placed. Every trade publicly verified on MyFXBook."/>
-<meta property="og:image" content="https://timetoshineofficial.com/TIMETOSHINE_logo.svg"/>
+<meta property="og:image" content="https://timetoshineofficial.com/og-image.png"/>
 <meta property="og:site_name" content="TIMETOSHINE"/>
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="TIMETOSHINE — Disciplined Gold Trading"/>
 <meta name="twitter:description" content="Research-driven XAUUSD copy-trading. Verified on MyFXBook."/>
-<meta name="twitter:image" content="https://timetoshineofficial.com/TIMETOSHINE_logo.svg"/>
+<meta name="twitter:image" content="https://timetoshineofficial.com/og-image.png"/>
 
 <!-- Cloudflare Web Analytics — sign up free at dash.cloudflare.com -> Analytics & Logs -> Web Analytics
      and paste the provided <script defer src=... data-cf-beacon=...></script> below this line. -->
@@ -583,9 +587,37 @@
     padding:10px;
   }
   .modal-btn-tertiary:hover{color:var(--text);text-decoration:underline}
-</style>
+
+  /* Scroll progress bar */
+  .scroll-progress{
+    position:fixed;top:0;left:0;height:3px;width:0%;
+    background:linear-gradient(90deg, var(--gold) 0%, var(--gold-soft) 100%);
+    z-index:9999;
+    transition:width .1s linear;
+    box-shadow:0 0 8px rgba(212,175,55,0.5);
+  }</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "TIMETOSHINE",
+  "url": "https://timetoshineofficial.com",
+  "logo": "https://timetoshineofficial.com/icon-512.png",
+  "description": "Disciplined XAUUSD copy-trading strategy with hand-placed entries and verified public track record.",
+  "sameAs": [
+    "https://t.me/TIMETOSHINE08",
+    "https://www.myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554",
+    "https://ct.spotware.com/copy/strategy/117861"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "hello@timetoshineofficial.com",
+    "contactType": "customer support"
+  }
+}
+</script>
 </head>
-<body>
+<body><div class="scroll-progress" id="scrollProgress"></div>
 
 <!-- LOADING SPLASH -->
 <div class="splash" id="splash"><img src="TIMETOSHINE_logo.svg" alt=""/></div>
@@ -685,7 +717,7 @@
   </div>
 
   <div class="perf-updated">
-    <span class="dot">●</span> Last updated: <span data-stat="last-updated">Jun 25, 2026 · 19:09 UTC</span>
+    <span class="dot">●</span> Last updated: <span data-stat="last-updated">Jun 25, 2026 · 19:30 UTC</span>
   </div>
 
   <!-- Equity curve (cumulative % growth — refreshed by update_stats.py daily) -->
@@ -924,6 +956,53 @@
     if (modalClose) modalClose.addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  }
+
+  // Animated stat counters (count up from 0 when stats first enter viewport)
+  const animateCounter = (el, finalText) => {
+    const m = finalText.match(/(-?\+?)([\d,]+\.?\d*)(.*)/);
+    if (!m) return;
+    const prefix = m[1] || '';
+    const num    = parseFloat(m[2].replace(/,/g, ''));
+    const suffix = m[3] || '';
+    if (isNaN(num)) return;
+    const dur = 1200;
+    const t0 = performance.now();
+    const decimals = (m[2].split('.')[1] || '').length;
+    const tick = (now) => {
+      const t = Math.min(1, (now - t0) / dur);
+      const ease = 1 - Math.pow(1 - t, 3);
+      const cur = num * ease;
+      el.textContent = prefix + cur.toFixed(decimals) + suffix;
+      if (t < 1) requestAnimationFrame(tick);
+      else el.textContent = finalText;
+    };
+    requestAnimationFrame(tick);
+  };
+  const statObserver = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting && !e.target.dataset.animated) {
+        e.target.dataset.animated = '1';
+        animateCounter(e.target, e.target.textContent.trim());
+        statObserver.unobserve(e.target);
+      }
+    }
+  }, { threshold: 0.4 });
+  document.querySelectorAll('[data-stat]').forEach(el => {
+    const txt = el.textContent.trim();
+    if (/^[-+]?\d/.test(txt) || /\d/.test(txt)) statObserver.observe(el);
+  });
+
+  // Scroll progress bar
+  const sp = document.getElementById('scrollProgress');
+  if (sp) {
+    const updateProgress = () => {
+      const scrolled = window.scrollY;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      sp.style.width = max > 0 ? (scrolled / max * 100) + '%' : '0%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
   }
 </script>
 </body>
