@@ -517,6 +517,72 @@
     text-align:center;margin-top:28px;font-size:12px;color:var(--muted);letter-spacing:0.05em;
   }
   .perf-updated .dot{color:var(--green);font-weight:900}
+
+  /* ===== AFFILIATE-FUNNEL MODAL ===== */
+  .modal-backdrop{
+    position:fixed;inset:0;z-index:1000;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter:blur(8px);
+    display:none;align-items:center;justify-content:center;
+    padding:24px;
+    opacity:0;transition:opacity .25s ease;
+  }
+  .modal-backdrop.open{display:flex;opacity:1}
+  .modal-card{
+    background:linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
+    border:1px solid rgba(212,175,55,0.3);
+    border-radius:18px;
+    padding:36px 30px 30px;
+    max-width:520px;width:100%;
+    box-shadow:0 30px 80px rgba(0,0,0,0.6);
+    transform:scale(.94);transition:transform .25s ease;
+  }
+  .modal-backdrop.open .modal-card{transform:scale(1)}
+  .modal-close{
+    position:absolute;top:14px;right:14px;
+    background:none;border:none;color:var(--muted);
+    font-size:22px;cursor:pointer;line-height:1;
+    width:32px;height:32px;border-radius:50%;
+    transition:background .15s, color .15s;
+  }
+  .modal-close:hover{background:rgba(255,255,255,0.06);color:var(--text)}
+  .modal-card{position:relative}
+  .modal-card .kicker{margin-bottom:8px;text-align:center}
+  .modal-card h3{
+    text-align:center;font-size:22px;margin-bottom:6px;color:var(--text)
+  }
+  .modal-card .sub{
+    text-align:center;color:var(--muted);font-size:14px;margin-bottom:26px;
+  }
+  .modal-options{display:flex;flex-direction:column;gap:10px}
+  .modal-btn{
+    display:block;padding:14px 18px;border-radius:10px;
+    text-align:left;text-decoration:none;font-weight:600;font-size:14.5px;
+    border:1px solid transparent;transition:transform .15s, border-color .15s, background .15s;
+  }
+  .modal-btn:hover{transform:translateY(-1px)}
+  .modal-btn .label{display:block;margin-bottom:2px}
+  .modal-btn .hint{display:block;font-size:12px;font-weight:400;opacity:0.7}
+  .modal-btn-primary{
+    background:linear-gradient(180deg, #e9c252 0%, #c69826 100%);
+    color:#1a1306;
+    box-shadow:0 6px 18px rgba(212,175,55,0.18);
+  }
+  .modal-btn-primary:hover{box-shadow:0 10px 24px rgba(212,175,55,0.25)}
+  .modal-btn-secondary{
+    background:rgba(255,255,255,0.04);
+    color:var(--text);
+    border:1px solid var(--line);
+  }
+  .modal-btn-secondary:hover{background:rgba(255,255,255,0.08);border-color:rgba(212,175,55,0.3)}
+  .modal-btn-tertiary{
+    background:transparent;
+    color:var(--muted);
+    text-align:center;
+    font-size:13px;
+    padding:10px;
+  }
+  .modal-btn-tertiary:hover{color:var(--text);text-decoration:underline}
 </style>
 </head>
 <body>
@@ -535,13 +601,15 @@
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links" id="navLinks">
-      <a href="#how-to-copy">How to Copy</a>
+      <a href="how-to-copy.html">How to Copy</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
       <a href="https://www.myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554" target="_blank" rel="noopener">Track Record</a>
       <a class="nav-telegram" href="https://t.me/TIMETOSHINE08" target="_blank" rel="noopener" aria-label="Telegram">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.04 15.47l-.36 4.99c.52 0 .74-.22 1-.48l2.4-2.27 4.98 3.6c.91.5 1.56.24 1.78-.84l3.23-15.05c.28-1.3-.47-1.81-1.36-1.48L1.5 9.97c-1.27.5-1.26 1.22-.22 1.54l4.94 1.54L17.7 6.18c.54-.34 1.04-.15.63.2L9.04 15.47z"/></svg>
         <span>Telegram</span>
       </a>
-      <a class="nav-cta" href="https://ct.spotware.com/copy/strategy/117861" target="_blank" rel="noopener">Copy on cTrader</a>
+      <a class="nav-cta" href="#" data-cta-trigger>Get Started</a>
     </div>
   </div>
 </nav>
@@ -558,8 +626,8 @@
       Every trade is published live to MyFXBook and cTrader Copy. Nothing is hidden.
     </p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="https://ct.spotware.com/copy/strategy/117861" target="_blank" rel="noopener">
-        Start copying on cTrader →
+      <a class="btn btn-primary" href="#" data-cta-trigger>
+        Get Started →
       </a>
       <a class="btn btn-ghost" href="https://www.myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554" target="_blank" rel="noopener">
         Inspect the live track record
@@ -617,7 +685,7 @@
   </div>
 
   <div class="perf-updated">
-    <span class="dot">●</span> Last updated: <span data-stat="last-updated">Jun 25, 2026 · 18:00 UTC</span>
+    <span class="dot">●</span> Last updated: <span data-stat="last-updated">Jun 25, 2026 · 18:56 UTC</span>
   </div>
 
   <!-- Equity curve (cumulative % growth — refreshed by update_stats.py daily) -->
@@ -733,71 +801,21 @@
   </div>
 </section>
 
-<!-- HOW TO COPY (4-step playbook) -->
-<section class="how-section" id="how-to-copy">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="kicker">Get Started</div>
-      <h2>How to copy this strategy in 4 steps</h2>
-      <p style="color:var(--muted);font-size:17px">A clean walkthrough — open account, link funds, start copying. About 15 minutes from sign-up to first auto-replicated trade.</p>
+<!-- ABOUT / STORY -->
+<section style="background:linear-gradient(180deg, var(--bg) 0%, var(--panel-2) 100%);padding:96px 24px">
+  <div class="container" style="max-width:880px">
+    <div class="section-head reveal" style="margin-bottom:32px">
+      <div class="kicker">Who's Behind This</div>
+      <h2>20+ years in the markets — together.</h2>
     </div>
-    <div class="how-grid">
-
-      <div class="how-card reveal">
-        <div class="step">1</div>
-        <h3>Open a Pepperstone account</h3>
-        <p>Sign up with Pepperstone — our regulated broker. Identity verification is standard. Choose <strong>cTrader</strong> as your platform.</p>
-        <ul>
-          <li>Use the link below for the right setup</li>
-          <li>Verify your ID (driver's licence or passport)</li>
-          <li>Select cTrader when asked</li>
-        </ul>
-        <a class="step-link" href="https://pepperstone.com/en/go/refer-a-friend/?locale=en&promo_type=RAF&utm_source=3098839" target="_blank" rel="noopener">Open Pepperstone →</a>
-      </div>
-
-      <div class="how-card reveal">
-        <div class="step">2</div>
-        <h3>Create a cTrader USD sub-account</h3>
-        <p>Inside Pepperstone Client Area, create a trading sub-account with the exact settings that match the strategy.</p>
-        <ul>
-          <li>Platform: <strong>cTrader</strong></li>
-          <li>Base currency: <strong>USD</strong></li>
-          <li>Leverage: <strong>1:500</strong></li>
-          <li>Minimum deposit: <strong>$750 USD</strong></li>
-        </ul>
-        <a class="step-link" href="https://secure.pepperstone.com/en/login" target="_blank" rel="noopener">Pepperstone Client Area →</a>
-      </div>
-
-      <div class="how-card reveal">
-        <div class="step">3</div>
-        <h3>Log in to cTrader Copy</h3>
-        <p>Open the cTrader Copy social terminal where the strategy is hosted. Sign in with the cTID and password sent to your email when the sub-account was created.</p>
-        <ul>
-          <li>Open the TIMETOSHINE strategy</li>
-          <li>Log in with your cTID</li>
-          <li>Click the Copy icon in the left menu</li>
-        </ul>
-        <a class="step-link" href="https://ct.spotware.com/copy/strategy/117861" target="_blank" rel="noopener">Open TIMETOSHINE →</a>
-      </div>
-
-      <div class="how-card reveal">
-        <div class="step">4</div>
-        <h3>Link your funds and start copying</h3>
-        <p>Hit the green <strong>Start Copying</strong> button on the strategy page. Pick your funded USD account, allocate your $750+, review the fee structure, confirm.</p>
-        <ul>
-          <li>Click Start Copying (top right)</li>
-          <li>Select your USD Pepperstone account</li>
-          <li>Allocate $750+ USD</li>
-          <li>Confirm — trades start replicating instantly</li>
-        </ul>
-        <a class="step-link" href="https://ct.spotware.com/copy/strategy/117861" target="_blank" rel="noopener">Start Copying →</a>
-      </div>
-
+    <div class="reveal" style="color:var(--muted);font-size:16.5px;line-height:1.75">
+      <p style="margin-bottom:18px">Honestly? We're not an AI startup, not a hedge fund, not a guy in a Lambo with six screens. We're traders who've spent <strong style="color:var(--text)">20+ years in the markets between us</strong> — through the COVID flash crash, gold's run past $2,400, and a lot of stretches where the smart play was to do absolutely nothing.</p>
+      <p style="margin-bottom:18px">Somewhere along the way we got tired of watching the same story play out: someone fires up an auto-bot, it makes money for a month, then blows up on the exact same setup any human trader would've stepped out of hours earlier. So we built something different.</p>
+      <p style="margin-bottom:18px">Our split is straightforward: <strong style="color:var(--text)">humans decide, software executes.</strong> We read the market each day — macro, structure, the news calendar — and place every entry by hand. The software handles the boring precision work: grid management, position sizing, news-event blackouts, the discipline no human can hold at 3 AM after a tough session.</p>
+      <p style="margin-bottom:18px">We chose gold because it rewards patience and reads. It moves on real macro forces (rates, the dollar, risk sentiment), not meme cycles. Deep liquidity, tight spreads, 24/5 — enough movement to trade, enough structure to manage.</p>
+      <p style="margin-bottom:18px">Most copy-trading services hide behind opaque "proprietary algorithms" and locked equity charts. We do the opposite: <strong style="color:var(--text)">every closed trade is public on MyFXBook within minutes. Every entry is hand-placed and timestamped. Every drawdown is visible.</strong> If we lose, you see it the same day we do.</p>
+      <p>We're not chasing the biggest follower count. We're building something that survives — for us, and for the people who trust us with their capital.</p>
     </div>
-    <p class="how-questions reveal">
-      Stuck on a step? Email <a href="mailto:hello@timetoshineofficial.com">hello@timetoshineofficial.com</a> — we read every one.
-      <br/>Or join our Telegram <a href="https://t.me/TIMETOSHINE08" target="_blank" rel="noopener">@TIMETOSHINE08</a> for daily updates.
-    </p>
   </div>
 </section>
 
@@ -807,8 +825,8 @@
     <h2>Two clicks to start copying.</h2>
     <p>Open a Pepperstone cTrader account, connect via cTrader Copy, allocate what you're comfortable losing. That's it.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="https://ct.spotware.com/copy/strategy/117861" target="_blank" rel="noopener">
-        Copy this strategy →
+      <a class="btn btn-primary" href="#" data-cta-trigger>
+        Get Started →
       </a>
       <a class="btn btn-ghost" href="https://www.myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554" target="_blank" rel="noopener">
         Verify first
@@ -843,11 +861,34 @@
 </aside>
 
 <footer>
-  TIMETOSHINE · <a href="https://ct.spotware.com/copy/strategy/117861" target="_blank" rel="noopener">cTrader Copy</a> · <a href="https://www.myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554" target="_blank" rel="noopener">MyFXBook</a> · <a href="https://t.me/TIMETOSHINE08" target="_blank" rel="noopener">Telegram</a> · <a href="mailto:hello@timetoshineofficial.com">Contact</a>
+  TIMETOSHINE · <a href="how-to-copy.html">How to Copy</a> · <a href="faq.html">FAQ</a> · <a href="contact.html">Contact</a> · <a href="https://www.myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554" target="_blank" rel="noopener">MyFXBook</a> · <a href="https://t.me/TIMETOSHINE08" target="_blank" rel="noopener">Telegram</a>
   <div style="margin-top:10px;font-size:11px;color:var(--muted);opacity:.6">
     © 2026 TIMETOSHINE · <a href="mailto:hello@timetoshineofficial.com" style="color:inherit">hello@timetoshineofficial.com</a>
   </div>
 </footer>
+
+<!-- AFFILIATE-FUNNEL MODAL (triggered by any [data-cta-trigger] element) -->
+<div class="modal-backdrop" id="ctaModal" role="dialog" aria-modal="true" aria-labelledby="ctaModalTitle">
+  <div class="modal-card">
+    <button class="modal-close" id="ctaModalClose" aria-label="Close">×</button>
+    <div class="kicker">Get Started</div>
+    <h3 id="ctaModalTitle">Before we head to the strategy —</h3>
+    <p class="sub">Do you already have a Pepperstone cTrader account?</p>
+    <div class="modal-options">
+      <a class="modal-btn modal-btn-primary" href="https://pepperstone.com/en/go/refer-a-friend/?locale=en&promo_type=RAF&utm_source=3098839" target="_blank" rel="noopener">
+        <span class="label">Open a Pepperstone account (recommended) →</span>
+        <span class="hint">Start fresh with our broker. ~10 min setup.</span>
+      </a>
+      <a class="modal-btn modal-btn-secondary" href="https://ct.spotware.com/copy/strategy/117861" target="_blank" rel="noopener">
+        <span class="label">I already have Pepperstone — copy now →</span>
+        <span class="hint">Skip straight to the cTrader Copy page.</span>
+      </a>
+      <a class="modal-btn modal-btn-tertiary" href="https://ct.spotware.com/copy/strategy/117861" target="_blank" rel="noopener">
+        Continue to strategy page without a broker
+      </a>
+    </div>
+  </div>
+</div>
 
 <script>
   // Reveal-on-scroll
@@ -881,6 +922,26 @@
       hb.classList.remove('open');
       hb.setAttribute('aria-expanded', 'false');
     }));
+  }
+
+  // Affiliate-funnel modal — triggered by any [data-cta-trigger] element
+  const modal = document.getElementById('ctaModal');
+  const modalClose = document.getElementById('ctaModalClose');
+  if (modal) {
+    document.querySelectorAll('[data-cta-trigger]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    const closeModal = () => {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    };
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
   }
 </script>
 </body>
