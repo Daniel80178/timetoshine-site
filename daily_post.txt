@@ -1,12 +1,10 @@
-📊 TIMETOSHINE — Daily Recap (Jun 26)
+📊 TIMETOSHINE — Daily Recap (Jun 28)
 
 🕯️ Today's session
-• 2 trades closed
-• 2 wins · 0 losses
-• Win rate: 100%
-• Day: +2.36%
+• 0 trades closed
+• Day: 0.00%
 
-A clean session. Every entry hit profit. Selectivity over volume — quality over quantity. Exactly the rhythm the strategy is built for.
+No closures today — patience over forcing. Sometimes the best trade is no trade. The strategy waits for setups that meet its criteria and skips the rest.
 
 📅 Zoom out:
 • Week so far: +19.8%
@@ -15,8 +13,8 @@ A clean session. Every entry hit profit. Selectivity over volume — quality ove
 • Overall win rate: 81.4%
 • Profit factor: 4.15
 
-💬 "Cut your losses short, let your winners run — both rules require courage."
-   — Anonymous market saying
+💬 "Trading is a psychological game. Most people think they're playing against the market, but the market doesn't care. You're playing against yourself."
+   — Martin Schwartz
 
 🔍 Verify everything live:
 myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554
