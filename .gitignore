@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Local-only helpers (if ever placed here by mistake)
+*_local.json
+*_secret*
+*.pem
+*.key
+ctrader_tokens.json
+manual_balance.json
+ftp_config.json
+telegram_config.json

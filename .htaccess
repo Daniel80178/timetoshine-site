@@ -1,0 +1,35 @@
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+<IfModule php8_module>
+   php_value error_log "/home/timetoq8z8s6/logs/php.error.log"
+   php_flag log_errors On
+</IfModule>
+<IfModule lsapi_module>
+   php_value error_log "/home/timetoq8z8s6/logs/php.error.log"
+   php_flag log_errors On
+</IfModule>
+# END cPanel-generated php ini directives, do not edit
+
+# Default PHP handler (kept from Afrihost default)
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php84 .php .php8 .phtml
+</IfModule>
+
+# --- TIMETOSHINE additions ---
+# Branded 404 page
+ErrorDocument 404 /404.html
+
+# Force index.html to be served at the root (in case index.php ever reappears)
+DirectoryIndex index.html index.php
+
+# Long-cache static assets (logos, favicons, og image) - browsers won't re-fetch on every visit
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/svg+xml      "access plus 7 days"
+  ExpiresByType image/png          "access plus 7 days"
+  ExpiresByType image/jpeg         "access plus 7 days"
+  ExpiresByType image/x-icon       "access plus 30 days"
+  ExpiresByType application/manifest+json  "access plus 7 days"
+  # HTML files: short cache so daily-refreshed stats are visible quickly
+  ExpiresByType text/html          "access plus 1 hour"
+</IfModule>

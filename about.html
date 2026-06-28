@@ -1,0 +1,273 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>About TIMETOSHINE — 20+ Years in the Markets</title>
+<meta name="description" content="The team and philosophy behind TIMETOSHINE. Hand-placed trades, software-managed execution, full transparency on every position."/>
+<link rel="canonical" href="https://timetoshineofficial.com/about.html"/>
+<link rel="icon" type="image/svg+xml" href="TIMETOSHINE_logo.svg"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="manifest" href="/manifest.json"/>
+<meta name="theme-color" content="#0a0e14"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://timetoshineofficial.com/about.html"/>
+<meta property="og:title" content="About TIMETOSHINE — 20+ Years in the Markets"/>
+<meta property="og:description" content="Traders, not an AI startup. Hand-placed trades. Full transparency. Here's our story."/>
+<meta property="og:image" content="https://timetoshineofficial.com/og-image.png?v=20260628"/>
+<meta property="og:site_name" content="TIMETOSHINE"/>
+
+<style>
+  :root{
+    --bg:#0a0e14; --panel:#11161f; --panel-2:#161c27; --line:#1f2733;
+    --text:#e6edf3; --muted:#8b9bb0; --gold:#d4af37; --gold-soft:#f0b90b;
+    --green:#3fb950; --red:#f85149; --accent:#58a6ff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin:0}
+  p{margin:0}
+  a{color:var(--gold);text-decoration:none}
+
+  /* Nav */
+  .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(10,14,20,0.78);border-bottom:1px solid rgba(255,255,255,0.04)}
+  .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 24px}
+  .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:800;letter-spacing:0.22em;font-size:15px}
+  .brand .mark{width:36px;height:36px;display:block;filter:drop-shadow(0 4px 12px rgba(212,175,55,0.25))}
+  .brand .name{background:linear-gradient(90deg,var(--gold) 0%, #f5d36b 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .nav-links{display:flex;align-items:center;gap:18px}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;transition:color .15s ease}
+  .nav-links a:hover{color:var(--text)}
+  .nav-cta{background:rgba(212,175,55,0.12);border:1px solid rgba(212,175,55,0.35);color:var(--gold) !important;padding:7px 14px;border-radius:7px;font-weight:600 !important}
+  .nav-cta:hover{background:rgba(212,175,55,0.2);color:var(--gold-soft) !important}
+  .nav-telegram{display:inline-flex;align-items:center;gap:6px;color:#5BB6E8 !important}
+  .nav-telegram:hover{color:#7FCDF5 !important}
+  .nav-telegram svg{width:14px;height:14px}
+  .hamburger{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer;flex-direction:column;gap:4px;align-items:center;justify-content:center}
+  .hamburger span{display:block;width:20px;height:2px;background:var(--text);border-radius:2px;transition:transform .25s, opacity .25s}
+  .hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  .hamburger.open span:nth-child(2){opacity:0}
+  .hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+  @media (max-width:700px){
+    .hamburger{display:flex}
+    .nav-links{display:none;position:absolute;top:100%;right:24px;left:24px;flex-direction:column;align-items:stretch;gap:6px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:10px 12px;border-radius:8px;font-size:14px}
+    .nav-links a:hover{background:rgba(255,255,255,.03)}
+    .nav-telegram span{display:inline !important}
+    .nav-links a:not(.nav-cta):not(.nav-telegram){display:block !important}
+  }
+
+  /* Page-specific */
+  .page-hero{padding:80px 24px 48px;text-align:center;background:radial-gradient(800px 400px at 50% 0%, rgba(212,175,55,0.12) 0%, transparent 60%), var(--bg)}
+  .page-hero .kicker{color:var(--gold);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;font-weight:700;margin-bottom:14px}
+  .page-hero h1{font-size:clamp(34px, 5vw, 56px);margin-bottom:18px}
+  .page-hero p{color:var(--muted);font-size:17px;max-width:680px;margin:0 auto}
+
+  .story-wrap{max-width:780px;margin:0 auto;padding:48px 24px 96px;color:var(--muted);font-size:17px;line-height:1.8}
+  .story-wrap p{margin-bottom:24px}
+  .story-wrap p strong{color:var(--text)}
+  .story-pull{
+    margin:48px 0;padding:32px 28px;
+    background:linear-gradient(135deg, rgba(212,175,55,0.06), rgba(212,175,55,0.02));
+    border-left:3px solid var(--gold);
+    border-radius:0 12px 12px 0;
+    color:var(--text);font-size:19px;font-weight:600;font-style:italic;line-height:1.5;
+  }
+
+  .closer{max-width:760px;margin:0 auto;padding:48px 24px 96px;text-align:center;background:var(--panel-2)}
+  .closer h2{font-size:28px;margin-bottom:14px}
+  .closer p{color:var(--muted);font-size:16px;margin-bottom:28px}
+  .closer .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;transition:transform .15s ease}
+  .btn-primary{background:linear-gradient(180deg, #e9c252 0%, #c69826 100%);color:#1a1306;box-shadow:0 8px 24px rgba(212,175,55,0.25)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{background:rgba(255,255,255,0.04);color:var(--text);border:1px solid var(--line)}
+  .btn-ghost:hover{background:rgba(255,255,255,0.08);transform:translateY(-2px)}
+
+  /* Footer */
+  footer{padding:30px 24px;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+  footer a{color:var(--gold);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+
+  /* Modal */
+  .modal-backdrop{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .25s ease}
+  .modal-backdrop.open{display:flex;opacity:1}
+  .modal-card{background:linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);border:1px solid rgba(212,175,55,0.3);border-radius:18px;padding:36px 30px 30px;max-width:520px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,0.6);transform:scale(.94);transition:transform .25s ease;position:relative}
+  .modal-backdrop.open .modal-card{transform:scale(1)}
+  .modal-close{position:absolute;top:14px;right:14px;background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;line-height:1;width:32px;height:32px;border-radius:50%;transition:background .15s, color .15s}
+  .modal-close:hover{background:rgba(255,255,255,0.06);color:var(--text)}
+  .modal-card .kicker{margin-bottom:8px;text-align:center;color:var(--gold);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;font-weight:700}
+  .modal-card h3{text-align:center;font-size:22px;margin-bottom:6px}
+  .modal-card .sub{text-align:center;color:var(--muted);font-size:14px;margin-bottom:26px}
+  .modal-options{display:flex;flex-direction:column;gap:10px}
+  .modal-btn{display:block;padding:14px 18px;border-radius:10px;text-align:left;text-decoration:none;font-weight:600;font-size:14.5px;border:1px solid transparent;transition:transform .15s, border-color .15s, background .15s}
+  .modal-btn:hover{transform:translateY(-1px)}
+  .modal-btn .label{display:block;margin-bottom:2px}
+  .modal-btn .hint{display:block;font-size:12px;font-weight:400;opacity:0.7}
+  .modal-btn-primary{background:linear-gradient(180deg, #e9c252 0%, #c69826 100%);color:#1a1306;box-shadow:0 6px 18px rgba(212,175,55,0.18)}
+  .modal-btn-primary:hover{box-shadow:0 10px 24px rgba(212,175,55,0.25)}
+  .modal-btn-secondary{background:rgba(255,255,255,0.04);color:var(--text);border:1px solid var(--line)}
+  .modal-btn-secondary:hover{background:rgba(255,255,255,0.08);border-color:rgba(212,175,55,0.3)}
+  .modal-btn-tertiary{background:transparent;color:var(--muted);text-align:center;font-size:13px;padding:10px}
+  .modal-btn-tertiary:hover{color:var(--text);text-decoration:underline}
+
+  /* Scroll progress bar */
+  .scroll-progress{
+    position:fixed;top:0;left:0;height:3px;width:0%;
+    background:linear-gradient(90deg, var(--gold) 0%, var(--gold-soft) 100%);
+    z-index:9999;
+    transition:width .1s linear;
+    box-shadow:0 0 8px rgba(212,175,55,0.5);
+  }</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "TIMETOSHINE",
+  "url": "https://timetoshineofficial.com",
+  "logo": "https://timetoshineofficial.com/icon-512.png",
+  "description": "Disciplined XAUUSD copy-trading strategy with hand-placed entries and verified public track record.",
+  "sameAs": [
+    "https://t.me/TIMETOSHINE08",
+    "https://www.myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554",
+    "https://ct.spotware.com/copy/strategy/117861"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "hello@timetoshineofficial.com",
+    "contactType": "customer support"
+  }
+}
+</script>
+</head>
+<body><div class="scroll-progress" id="scrollProgress"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <img class="mark" src="TIMETOSHINE_logo.svg" alt="TIMETOSHINE"/>
+      <span class="name">TIMETOSHINE</span>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="how-to-copy.html">How to Copy</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://www.myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554" target="_blank" rel="noopener">Track Record</a>
+      <a class="nav-telegram" href="https://t.me/TIMETOSHINE08" target="_blank" rel="noopener" aria-label="Telegram">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.04 15.47l-.36 4.99c.52 0 .74-.22 1-.48l2.4-2.27 4.98 3.6c.91.5 1.56.24 1.78-.84l3.23-15.05c.28-1.3-.47-1.81-1.36-1.48L1.5 9.97c-1.27.5-1.26 1.22-.22 1.54l4.94 1.54L17.7 6.18c.54-.34 1.04-.15.63.2L9.04 15.47z"/></svg>
+        <span>Telegram</span>
+      </a>
+      <a class="nav-cta" href="#" data-cta-trigger>Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="kicker">Who's Behind This</div>
+  <h1>20+ years in the markets — together.</h1>
+  <p>The team, the philosophy, and the reason we do this differently.</p>
+</section>
+
+<div class="story-wrap">
+  <p>Honestly? We're not an AI startup, not a hedge fund, not a guy in a Lambo with six screens. We're traders who've spent <strong>20+ years in the markets between us</strong> — through the COVID flash crash, gold's run past $2,400, and a lot of stretches where the smart play was to do absolutely nothing.</p>
+
+  <p>Somewhere along the way we got tired of watching the same story play out: someone fires up an auto-bot, it makes money for a month, then blows up on the exact same setup any human trader would've stepped out of hours earlier. So we built something different.</p>
+
+  <div class="story-pull">"Humans decide. Software executes. That's the whole approach."</div>
+
+  <p>Our split is straightforward: <strong>humans decide, software executes.</strong> We read the market each day — macro, structure, the news calendar — and place every entry by hand. The software handles the boring precision work: grid management, position sizing, news-event blackouts, the discipline no human can hold at 3 AM after a tough session.</p>
+
+  <p>We chose gold because it rewards patience and reads. It moves on real macro forces (rates, the dollar, risk sentiment), not meme cycles. Deep liquidity, tight spreads, 24/5 — enough movement to trade, enough structure to manage.</p>
+
+  <p>Most copy-trading services hide behind opaque "proprietary algorithms" and locked equity charts. We do the opposite: <strong>every closed trade is public on MyFXBook within minutes. Every entry is hand-placed and timestamped. Every drawdown is visible.</strong> If we lose, you see it the same day we do.</p>
+
+  <p>We're not chasing the biggest follower count. We're building something that survives — for us, and for the people who trust us with their capital.</p>
+</div>
+
+<section class="closer">
+  <h2>Ready to see how it works?</h2>
+  <p>The 4-step playbook walks you through copying the strategy. Or check our verified track record on MyFXBook.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="how-to-copy.html">How to Copy →</a>
+    <a class="btn btn-ghost" href="https://www.myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554" target="_blank" rel="noopener">Verify on MyFXBook</a>
+  </div>
+</section>
+
+<footer>
+  TIMETOSHINE · <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="how-to-copy.html">How to Copy</a> · <a href="faq.html">FAQ</a> · <a href="contact.html">Contact</a> · <a href="https://www.myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554" target="_blank" rel="noopener">MyFXBook</a> · <a href="https://t.me/TIMETOSHINE08" target="_blank" rel="noopener">Telegram</a>
+  <div style="margin-top:10px;font-size:11px;color:var(--muted);opacity:.6">© 2026 TIMETOSHINE · <a href="mailto:hello@timetoshineofficial.com" style="color:inherit">hello@timetoshineofficial.com</a></div>
+</footer>
+
+<div class="modal-backdrop" id="ctaModal" role="dialog" aria-modal="true" aria-labelledby="ctaModalTitle">
+  <div class="modal-card">
+    <button class="modal-close" id="ctaModalClose" aria-label="Close">×</button>
+    <div class="kicker">Get Started</div>
+    <h3 id="ctaModalTitle">Before we head to the strategy —</h3>
+    <p class="sub">Do you already have a Pepperstone cTrader account?</p>
+    <div class="modal-options">
+      <a class="modal-btn modal-btn-primary" href="https://pepperstone.com/en/go/refer-a-friend/?locale=en&promo_type=RAF&utm_source=3098839" target="_blank" rel="noopener">
+        <span class="label">Open a Pepperstone account (recommended) →</span>
+        <span class="hint">Start fresh with our broker. ~10 min setup.</span>
+      </a>
+      <a class="modal-btn modal-btn-secondary" href="https://ct.spotware.com/copy/strategy/117861" target="_blank" rel="noopener">
+        <span class="label">I already have Pepperstone — copy now →</span>
+        <span class="hint">Skip straight to the cTrader Copy page.</span>
+      </a>
+      <a class="modal-btn modal-btn-tertiary" href="https://ct.spotware.com/copy/strategy/117861" target="_blank" rel="noopener">
+        Continue to strategy page without a broker
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const hb = document.getElementById('hamburger');
+  const nav = document.getElementById('navLinks');
+  if (hb && nav) {
+    hb.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      hb.classList.toggle('open', open);
+      hb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      nav.classList.remove('open'); hb.classList.remove('open');
+      hb.setAttribute('aria-expanded', 'false');
+    }));
+  }
+
+  const modal = document.getElementById('ctaModal');
+  const modalClose = document.getElementById('ctaModalClose');
+  if (modal) {
+    document.querySelectorAll('[data-cta-trigger]').forEach(el => {
+      el.addEventListener('click', (e) => { e.preventDefault(); modal.classList.add('open'); document.body.style.overflow = 'hidden'; });
+    });
+    const closeModal = () => { modal.classList.remove('open'); document.body.style.overflow = ''; };
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  }
+
+  // Scroll progress bar
+  const sp = document.getElementById('scrollProgress');
+  if (sp) {
+    const updateProgress = () => {
+      const scrolled = window.scrollY;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      sp.style.width = max > 0 ? (scrolled / max * 100) + '%' : '0%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+</script>
+</body>
+</html>
