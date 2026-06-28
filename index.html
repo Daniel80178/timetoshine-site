@@ -410,6 +410,75 @@
     letter-spacing:.05em;
   }
 
+  /* ===== MONTHLY BREAKDOWN STRIP ===== */
+  .monthly-strip{
+    max-width:980px;margin:24px auto 0;
+    background:linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:22px 22px 18px;
+  }
+  .monthly-strip-header{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    margin-bottom:14px;
+  }
+  .monthly-strip-header .title{
+    font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
+    color:var(--muted);font-weight:700;
+  }
+  .monthly-strip-header .hint{
+    font-size:11px;color:var(--muted);opacity:.6;
+  }
+  .monthly-rows{
+    max-height:320px;     /* ~5 rows visible before scroll kicks in */
+    overflow-y:auto;
+    padding-right:6px;
+  }
+  /* Gold-accent custom scrollbar (Chromium-based) */
+  .monthly-rows::-webkit-scrollbar{width:6px}
+  .monthly-rows::-webkit-scrollbar-track{background:rgba(255,255,255,0.03);border-radius:3px}
+  .monthly-rows::-webkit-scrollbar-thumb{background:rgba(212,175,55,0.4);border-radius:3px}
+  .monthly-rows::-webkit-scrollbar-thumb:hover{background:rgba(212,175,55,0.65)}
+  /* Firefox */
+  .monthly-rows{scrollbar-width:thin;scrollbar-color:rgba(212,175,55,0.4) rgba(255,255,255,0.03)}
+
+  .month-row{
+    display:grid;grid-template-columns:1.2fr auto 1fr;
+    align-items:center;gap:16px;
+    padding:14px 16px;
+    border-radius:10px;
+    margin-bottom:6px;
+    background:rgba(255,255,255,0.02);
+    border:1px solid transparent;
+    transition:background .15s ease, border-color .15s ease;
+  }
+  .month-row:hover{background:rgba(255,255,255,0.04)}
+  .month-row.current{
+    background:rgba(212,175,55,0.07);
+    border-color:rgba(212,175,55,0.25);
+  }
+  .month-label{font-weight:600;font-size:14px;color:var(--text)}
+  .month-label .badge{
+    display:inline-block;margin-left:8px;
+    font-size:10px;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--gold);font-weight:700;
+    padding:2px 7px;border-radius:999px;
+    background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.25);
+  }
+  .month-pct{
+    font-size:22px;font-weight:800;letter-spacing:-0.01em;
+    text-align:center;min-width:88px;
+  }
+  .month-pct.positive{color:var(--green)}
+  .month-pct.negative{color:var(--red)}
+  .month-meta{font-size:12px;color:var(--muted);text-align:right;letter-spacing:.02em}
+
+  @media (max-width:640px){
+    .month-row{grid-template-columns:1fr 1fr;gap:6px 12px}
+    .month-meta{grid-column:1 / 3;text-align:left;padding-top:2px}
+    .month-pct{text-align:right;min-width:auto}
+  }
+
   /* ===== HOW TO COPY (4 numbered cards) ===== */
   .how-section{background:linear-gradient(180deg, var(--bg) 0%, var(--panel-2) 100%);padding:96px 24px}
   .how-grid{
@@ -718,7 +787,7 @@
   </div>
 
   <div class="perf-updated">
-    <span class="dot">●</span> Last updated: <span data-stat="last-updated">Jun 28, 2026 · 14:52 UTC</span>
+    <span class="dot">●</span> Last updated: <span data-stat="last-updated">Jun 28, 2026 · 15:01 UTC</span>
   </div>
 
   <!-- Equity curve (cumulative % growth — refreshed by update_stats.py daily) -->
@@ -726,6 +795,9 @@
     <!--EQUITY_SVG_START--><svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="eqFill" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#d4af37" stop-opacity="0.35"/><stop offset="100%" stop-color="#d4af37" stop-opacity="0"/></linearGradient></defs><line x1="70" y1="270.0" x2="770" y2="270.0" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,3"/><line x1="70" y1="234.1" x2="770" y2="234.1" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,3"/><line x1="70" y1="198.1" x2="770" y2="198.1" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,3"/><line x1="70" y1="162.2" x2="770" y2="162.2" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,3"/><line x1="70" y1="126.2" x2="770" y2="126.2" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,3"/><line x1="70" y1="90.3" x2="770" y2="90.3" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,3"/><text x="62" y="274.0" fill="#8b9bb0" font-size="11" text-anchor="end">+0%</text><text x="62" y="238.1" fill="#8b9bb0" font-size="11" text-anchor="end">+20%</text><text x="62" y="202.1" fill="#8b9bb0" font-size="11" text-anchor="end">+40%</text><text x="62" y="166.2" fill="#8b9bb0" font-size="11" text-anchor="end">+60%</text><text x="62" y="130.2" fill="#8b9bb0" font-size="11" text-anchor="end">+80%</text><text x="62" y="94.3" fill="#8b9bb0" font-size="11" text-anchor="end">+100%</text><path d="M 70.0,267.7 L 73.8,265.4 L 75.0,263.0 L 76.6,260.4 L 77.5,263.2 L 77.5,261.4 L 85.1,259.1 L 86.2,257.7 L 86.2,254.8 L 94.6,252.1 L 98.1,249.4 L 99.2,246.9 L 102.1,249.5 L 102.1,251.1 L 102.1,251.5 L 102.1,251.6 L 102.1,250.3 L 102.1,248.6 L 102.1,246.4 L 109.2,243.8 L 124.4,242.4 L 124.4,242.9 L 133.9,242.0 L 143.3,239.4 L 151.1,236.8 L 151.6,234.0 L 161.9,231.2 L 161.9,235.8 L 161.9,236.3 L 161.9,234.9 L 161.9,232.6 L 175.0,229.8 L 175.2,228.9 L 175.2,226.9 L 175.2,223.5 L 238.9,218.9 L 249.4,215.7 L 249.4,218.6 L 249.4,217.8 L 250.6,216.0 L 266.3,214.8 L 266.3,211.8 L 266.3,208.0 L 289.6,207.2 L 289.6,209.2 L 289.8,206.9 L 295.4,205.1 L 298.4,201.8 L 307.1,198.7 L 314.8,195.6 L 314.8,196.6 L 316.9,195.0 L 319.0,190.6 L 419.8,178.9 L 421.0,172.3 L 421.0,172.3 L 421.0,172.3 L 421.0,172.3 L 432.7,168.5 L 437.1,166.2 L 437.1,165.2 L 437.1,164.6 L 437.1,164.3 L 437.1,164.2 L 437.1,167.2 L 437.1,171.3 L 437.1,177.6 L 453.8,174.0 L 454.2,170.7 L 454.2,169.0 L 472.1,167.9 L 477.2,165.3 L 477.2,163.9 L 477.2,164.1 L 510.4,151.6 L 513.6,147.4 L 526.8,142.0 L 531.7,137.7 L 532.8,135.6 L 532.8,140.4 L 606.5,136.6 L 628.7,133.9 L 629.4,132.4 L 634.8,133.5 L 635.1,135.1 L 635.9,133.8 L 637.5,129.2 L 637.7,128.4 L 638.4,126.5 L 641.4,122.2 L 644.6,118.0 L 645.3,113.9 L 645.8,118.1 L 645.8,118.1 L 645.8,118.1 L 645.9,118.2 L 645.9,118.2 L 645.9,118.2 L 645.9,118.2 L 658.3,115.6 L 663.6,113.3 L 667.5,112.2 L 668.0,109.7 L 683.6,108.5 L 685.6,106.5 L 686.7,103.4 L 686.7,102.8 L 691.8,97.5 L 692.2,89.4 L 692.2,89.4 L 695.2,87.6 L 705.6,83.0 L 711.5,79.1 L 770.0,106.0 L 770.0,270.0 L 70.0,270.0 Z" fill="url(#eqFill)"/><path d="M 70.0,267.7 L 73.8,265.4 L 75.0,263.0 L 76.6,260.4 L 77.5,263.2 L 77.5,261.4 L 85.1,259.1 L 86.2,257.7 L 86.2,254.8 L 94.6,252.1 L 98.1,249.4 L 99.2,246.9 L 102.1,249.5 L 102.1,251.1 L 102.1,251.5 L 102.1,251.6 L 102.1,250.3 L 102.1,248.6 L 102.1,246.4 L 109.2,243.8 L 124.4,242.4 L 124.4,242.9 L 133.9,242.0 L 143.3,239.4 L 151.1,236.8 L 151.6,234.0 L 161.9,231.2 L 161.9,235.8 L 161.9,236.3 L 161.9,234.9 L 161.9,232.6 L 175.0,229.8 L 175.2,228.9 L 175.2,226.9 L 175.2,223.5 L 238.9,218.9 L 249.4,215.7 L 249.4,218.6 L 249.4,217.8 L 250.6,216.0 L 266.3,214.8 L 266.3,211.8 L 266.3,208.0 L 289.6,207.2 L 289.6,209.2 L 289.8,206.9 L 295.4,205.1 L 298.4,201.8 L 307.1,198.7 L 314.8,195.6 L 314.8,196.6 L 316.9,195.0 L 319.0,190.6 L 419.8,178.9 L 421.0,172.3 L 421.0,172.3 L 421.0,172.3 L 421.0,172.3 L 432.7,168.5 L 437.1,166.2 L 437.1,165.2 L 437.1,164.6 L 437.1,164.3 L 437.1,164.2 L 437.1,167.2 L 437.1,171.3 L 437.1,177.6 L 453.8,174.0 L 454.2,170.7 L 454.2,169.0 L 472.1,167.9 L 477.2,165.3 L 477.2,163.9 L 477.2,164.1 L 510.4,151.6 L 513.6,147.4 L 526.8,142.0 L 531.7,137.7 L 532.8,135.6 L 532.8,140.4 L 606.5,136.6 L 628.7,133.9 L 629.4,132.4 L 634.8,133.5 L 635.1,135.1 L 635.9,133.8 L 637.5,129.2 L 637.7,128.4 L 638.4,126.5 L 641.4,122.2 L 644.6,118.0 L 645.3,113.9 L 645.8,118.1 L 645.8,118.1 L 645.8,118.1 L 645.9,118.2 L 645.9,118.2 L 645.9,118.2 L 645.9,118.2 L 658.3,115.6 L 663.6,113.3 L 667.5,112.2 L 668.0,109.7 L 683.6,108.5 L 685.6,106.5 L 686.7,103.4 L 686.7,102.8 L 691.8,97.5 L 692.2,89.4 L 692.2,89.4 L 695.2,87.6 L 705.6,83.0 L 711.5,79.1 L 770.0,106.0" stroke="#d4af37" stroke-width="2.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/><circle cx="249.4" cy="215.7" r="3" fill="#0a0e14" stroke="#d4af37" stroke-width="2"/><circle cx="419.8" cy="178.9" r="3" fill="#0a0e14" stroke="#d4af37" stroke-width="2"/><circle cx="770.0" cy="106.0" r="14" fill="#d4af37" fill-opacity="0.18"/><circle cx="770.0" cy="106.0" r="6" fill="#d4af37"/><text x="82" y="58" fill="#8b9bb0" font-size="11" font-weight="700" letter-spacing="2.5">TOTAL GROWTH</text><text x="82" y="102" fill="#d4af37" font-size="42" font-weight="900" letter-spacing="-1">+91.26%</text><text x="82" y="120" fill="#8b9bb0" font-size="11">since Jun 1, 2026</text><text x="70" y="302" fill="#8b9bb0" font-size="10">Jun 1</text><text x="770" y="302" fill="#8b9bb0" font-size="10" text-anchor="end">Jun 28</text></svg><!--EQUITY_SVG_END-->
     <div class="equity-caption">% growth from starting capital · refreshed daily at 20:00 SAST</div>
   </div>
+
+  <!-- Monthly breakdown (auto-generated by update_stats.py — newest first, scrolls after 5) -->
+  <!--MONTHLY_STRIP_START--><div class="monthly-strip"><div class="monthly-strip-header"><span class="title">Monthly breakdown</span><span class="hint"></span></div><div class="monthly-rows"><div class="month-row current"><div class="month-label">Jun 2026 <span class="badge">In progress</span></div><div class="month-pct positive">+91.3%</div><div class="month-meta">113 trades · 81% win</div></div></div></div><!--MONTHLY_STRIP_END-->
 </section>
 
 <!-- WHAT MAKES IT DIFFERENT -->
