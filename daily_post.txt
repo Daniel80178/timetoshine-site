@@ -1,20 +1,22 @@
-📊 TIMETOSHINE — Daily Recap (Jun 28)
+📊 TIMETOSHINE — Daily Recap (Jun 29)
 
 🕯️ Today's session
-• 0 trades closed
-• Day: 0.00%
+• 8 trades closed
+• 8 wins · 0 losses
+• Win rate: 100%
+• Day: +5.44%
 
-No closures today — patience over forcing. Sometimes the best trade is no trade. The strategy waits for setups that meet its criteria and skips the rest.
+A clean session. Every entry hit profit. Selectivity over volume — quality over quantity. Exactly the rhythm the strategy is built for.
 
 📅 Zoom out:
-• Week so far: +11.1%
-• Last week: +15.8%
-• Since launch (Jun 1): +91.3%
-• Overall win rate: 81.4%
-• Profit factor: 4.15
+• Week so far: +5.4%
+• Last week: +19.8%
+• Since launch (Jun 1): +101.7%
+• Overall win rate: 82.6%
+• Profit factor: 4.49
 
-💬 "Trading is a psychological game. Most people think they're playing against the market, but the market doesn't care. You're playing against yourself."
-   — Martin Schwartz
+💬 "Gold has worked down from Alexander's time. When something holds good for two thousand years, I do not believe it can be so because of prejudice or mistaken theory."
+   — Bernard Baruch
 
 🔍 Verify everything live:
 myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554
