@@ -1,22 +1,22 @@
-📊 TIMETOSHINE — Daily Recap (Jul 9)
+📊 TIMETOSHINE — Daily Recap (Jul 10)
 
 🕯️ Today's session
-• 8 trades closed
-• 3 wins · 5 losses
-• Win rate: 38%
-• Day: -3.53%
+• 7 trades closed
+• 7 wins · 0 losses
+• Win rate: 100%
+• Day: +6.27%
 
-A mixed session, finishing slightly red. The strategy doesn't dodge volatility — it manages through it. Tomorrow's setups will speak for themselves.
+A clean session. Every entry hit profit. Selectivity over volume — quality over quantity. Exactly the rhythm the strategy is built for.
 
 📅 Zoom out:
-• Week so far: +13.7%
+• Week so far: +21.2%
 • Last week: -14.6%
-• Since launch (Jun 1): +87.8%
-• Overall win rate: 79.5%
-• Profit factor: 3.49
+• Since launch (Jun 1): +100.2%
+• Overall win rate: 80.0%
+• Profit factor: 3.67
 
-💬 "Process produces results, not predictions."
-   — Anonymous market saying
+💬 "Rule No. 1: Never lose money. Rule No. 2: Never forget Rule No. 1."
+   — Warren Buffett
 
 🔍 Verify everything live:
 myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554
