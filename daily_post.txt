@@ -1,12 +1,10 @@
-📊 TIMETOSHINE — Daily Recap (Jul 21)
+📊 TIMETOSHINE — Daily Recap (Jul 22)
 
 🕯️ Today's session
-• 1 trades closed
-• 1 wins · 0 losses
-• Win rate: 100%
-• Day: +1.43%
+• 0 trades closed
+• Day: 0.00%
 
-A clean session. Every entry hit profit. Selectivity over volume — quality over quantity. Exactly the rhythm the strategy is built for.
+No closures today — patience over forcing. Sometimes the best trade is no trade. The strategy waits for setups that meet its criteria and skips the rest.
 
 📅 Zoom out:
 • Week so far: +6.4%
@@ -15,7 +13,7 @@ A clean session. Every entry hit profit. Selectivity over volume — quality ove
 • Overall win rate: 82.1%
 • Profit factor: 4.22
 
-💬 "The market will always be there tomorrow."
+💬 "Small edges compound into large fortunes — given time."
    — Anonymous market saying
 
 🔍 Verify everything live:
