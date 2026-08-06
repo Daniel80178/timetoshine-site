@@ -1,20 +1,22 @@
-📊 TIMETOSHINE — Daily Recap (Aug 5)
+📊 TIMETOSHINE — Daily Recap (Aug 6)
 
 🕯️ Today's session
-• 0 trades closed
-• Day: 0.00%
+• 4 trades closed
+• 3 wins · 1 losses
+• Win rate: 75%
+• Day: +30.30%
 
-No closures today — patience over forcing. Sometimes the best trade is no trade. The strategy waits for setups that meet its criteria and skips the rest.
+A balanced session — wins and losses both reported. The strategy is built for this rhythm: not every trade wins, but the math works out when you stay disciplined.
 
 📅 Zoom out:
-• Week so far: —
+• Week so far: +30.3%
 • Last week: +4.3%
-• Since launch (Jun 1): -95.0%
-• Overall win rate: 82.2%
-• Profit factor: 4.22
+• Since launch (Jun 1): -93.5%
+• Overall win rate: 82.1%
+• Profit factor: 4.23
 
-💬 "The best trades have fundamentals, technicals, and market tone all aligned."
-   — Michael Marcus
+💬 "Bulls make money, bears make money, pigs get slaughtered."
+   — Anonymous market saying
 
 🔍 Verify everything live:
 myfxbook.com/members/TIMETOSHINE8/timetoshine/12071554
